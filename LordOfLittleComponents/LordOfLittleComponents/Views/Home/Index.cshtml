@@ -1,0 +1,67 @@
+﻿@model LordOfLittleComponents.Models.EnvironmentDataViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h1>Vamo vê aí qual que eras desse Arduino então</h1>
+<hr />
+
+
+<div class="environment_conditions_container">
+
+    <div class="environment_conditions">
+        <p>Id:</p>
+        <p>Temperatura:</p>
+        <p>Umidade relativa do ar:</p>
+    </div>
+
+    @await Html.PartialAsync("_SensorData", Model)
+
+   
+    <p></p>
+
+</div>
+<hr />
+<div class="_container">
+
+    <h4>Aqui vão ficar os botões para acionamentos diversos!</h4>
+    <div class="buttons_commands">
+
+        <div class="commandButton">
+            <p>White LED</p>
+            <button id="btn_w">@Html.DisplayFor(model => model.Status)</button>
+        </div>
+
+        <div class="commandButton">
+            <p>Yellow LED</p>
+            <button id="btn_y">Ligar</button>
+        </div>
+
+        <div class="commandButton">
+            <p>Red LED</p>
+            <button id="btn_r">Ligar</button>
+        </div>
+
+        <div class="commandButton">
+            <p>Green LED</p>
+            <button id="btn_g">Ligar</button>
+        </div>
+
+    </div>
+    
+
+    @*<p>White Led</p>
+        <form asp-action="Send_turnOn">
+            <button type="submit" class="turnedOn">Turn on</button>
+        </form>
+        <form asp-action="Send_turnOff">
+            <button type="submit" class="turnedOff">Turn off</button>
+        </form>*@
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/refreshData.js"></script>
+<script src="~/js/commands.js"></script>
+
