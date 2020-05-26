@@ -19,8 +19,8 @@ namespace LordOfLittleComponents.Data
         public void Seed()
         {
             if(
-                //_context.Commands.Any()
-                //||
+                _context.Commands.Any()
+                ||
                 _context.TemperatureAndHumidity.Any()
                 )
             {

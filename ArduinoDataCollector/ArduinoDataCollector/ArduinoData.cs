@@ -22,7 +22,7 @@ namespace ArduinoDataCollector
 
         public ArduinoData()
         {
-            _timer = new Timer(1000) { AutoReset = true };
+            _timer = new Timer(3000) { AutoReset = true };
 
             _timer.Elapsed += (sender, eventArgs) =>
 
@@ -41,7 +41,7 @@ namespace ArduinoDataCollector
             {
                 serialPort.Open();
 
-                int id = 1;
+                int id = 762;
 
                 while (true)
                 {
@@ -75,10 +75,57 @@ namespace ArduinoDataCollector
 
                     id++;
 
+                    //Here it reads data from DB and write in Arduino:
+
+                   
+                    MySqlConnection connection;
+                    string connectionString = "server=localhost;uid=root;pwd=1234567;database=lordoflittlecomponentsappdb";
+
+                    //int status_ = 1;
+
+                    try
+                    {
+                        connection = new MySqlConnection();
+                        connection.ConnectionString = connectionString;
+                        connection.Open();
+
+                        string query = "SELECT * FROM commands";
+
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            var reader = command.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                //int id_ = (int)reader["Id"];
+                                int status_ = (int)reader["Status"];
+
+                                Console.WriteLine("--------" + status_);
+
+                                serialPort.Write(status_.ToString());
+                            }
+                            
+                        }
+
+                    }
+
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Deu erro! - " + e.Message);
+                    }
+
+                    //var lixo = Console.ReadLine();
+                    //serialPort.Write(lixo);
+
+
+                    //serialPort.Write(status_.ToString());
+
+                    //******//
+
                     //Here it generates a .txt file
                     string fileName = "arduinoData";
                     string fileExtension = "txt";
-                    File.AppendAllLines(@"C:\Users\Ricardo\OneDrive\Documentos\integrada_2\learningArduino\ArduinoDataCollector\"
+                    File.AppendAllLines(@"C:\Users\Ricardo\OneDrive\Documentos\Learning_Arduino_Automation\ArduinoDataCollector\"
                     + fileName + "." + fileExtension, _data_);
                     //************************************//
 
