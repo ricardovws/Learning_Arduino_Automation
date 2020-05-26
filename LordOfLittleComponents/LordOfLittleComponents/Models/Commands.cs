@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LordOfLittleComponents.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,5 +13,6 @@ namespace LordOfLittleComponents.Models
         public int On { get; set; }
         public int Off { get; set; }
         public int Status { get; set; }
+        public StatusEnum Status_Enum { get; set; }
     }
 }

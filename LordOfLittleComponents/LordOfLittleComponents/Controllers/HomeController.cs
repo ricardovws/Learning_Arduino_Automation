@@ -29,8 +29,17 @@ namespace LordOfLittleComponents.Controllers
         {
             var data = ShowTemperatureAndHumidityData();
 
-            data.Status = "Olha o bicho vindo, home!";
+            var component_1 = _context.Commands.FirstOrDefault(x => x.Id == 1).Status_Enum;
+            var component_2 = _context.Commands.FirstOrDefault(x => x.Id == 2).Status_Enum;
+            var component_3 = _context.Commands.FirstOrDefault(x => x.Id == 3).Status_Enum;
+            var component_4 = _context.Commands.FirstOrDefault(x => x.Id == 4).Status_Enum;
+
+            data.Status1 = component_1;
+            data.Status2 = component_2;
+            data.Status3 = component_3;
+            data.Status4 = component_4;
             
+
             return View(data);
         }
 
@@ -76,13 +85,15 @@ namespace LordOfLittleComponents.Controllers
         {
 
             var component = _context.Commands.First(x => x.Id == id);
-            if (command == "Ligar")
+            if (command == "On")
             {
                 component.Status = component.On;
+                component.Status_Enum = Models.Enums.StatusEnum.On;
             }
             else
             {
                 component.Status = component.Off;
+                component.Status_Enum = Models.Enums.StatusEnum.Off;
             }
             
             _context.Commands.Update(component);

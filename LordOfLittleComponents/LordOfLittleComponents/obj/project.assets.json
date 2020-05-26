@@ -12782,11 +12782,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ricardo\\OneDrive\\Documentos\\integrada_2\\learningArduino\\LordOfLittleComponents\\LordOfLittleComponents\\LordOfLittleComponents.csproj",
+      "projectUniqueName": "C:\\Users\\Ricardo\\OneDrive\\Documentos\\Learning_Arduino_Automation\\LordOfLittleComponents\\LordOfLittleComponents\\LordOfLittleComponents.csproj",
       "projectName": "LordOfLittleComponents",
-      "projectPath": "C:\\Users\\Ricardo\\OneDrive\\Documentos\\integrada_2\\learningArduino\\LordOfLittleComponents\\LordOfLittleComponents\\LordOfLittleComponents.csproj",
+      "projectPath": "C:\\Users\\Ricardo\\OneDrive\\Documentos\\Learning_Arduino_Automation\\LordOfLittleComponents\\LordOfLittleComponents\\LordOfLittleComponents.csproj",
       "packagesPath": "C:\\Users\\Ricardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ricardo\\OneDrive\\Documentos\\integrada_2\\learningArduino\\LordOfLittleComponents\\LordOfLittleComponents\\obj\\",
+      "outputPath": "C:\\Users\\Ricardo\\OneDrive\\Documentos\\Learning_Arduino_Automation\\LordOfLittleComponents\\LordOfLittleComponents\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

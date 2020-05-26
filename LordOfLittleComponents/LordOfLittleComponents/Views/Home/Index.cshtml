@@ -26,27 +26,27 @@
 <hr />
 <div class="_container">
 
-    <h4>Aqui vão ficar os botões para acionamentos diversos!</h4>
+    
     <div class="buttons_commands">
 
         <div class="commandButton">
-            <p>White LED</p>
-            <button id="btn_w">@Html.DisplayFor(model => model.Status)</button>
+            <p class="color-component-w">LED Branco</p>
+            Status:<button id="btn_w">@Html.DisplayFor(model => model.Status1)</button>
         </div>
 
         <div class="commandButton">
-            <p>Yellow LED</p>
-            <button id="btn_y">Ligar</button>
+            <p class="color-component-y">LED Amarelo</p>
+            Status:<button id="btn_y">@Html.DisplayFor(model => model.Status2)</button>
         </div>
 
         <div class="commandButton">
-            <p>Red LED</p>
-            <button id="btn_r">Ligar</button>
+            <p class="color-component-r">LED Vermelho</p>
+            Status:<button id="btn_r">@Html.DisplayFor(model => model.Status3)</button>
         </div>
 
         <div class="commandButton">
-            <p>Green LED</p>
-            <button id="btn_g">Ligar</button>
+            <p class="color-component-g">LED Verde</p>
+            Status:<button id="btn_g">@Html.DisplayFor(model => model.Status4)</button>
         </div>
 
     </div>

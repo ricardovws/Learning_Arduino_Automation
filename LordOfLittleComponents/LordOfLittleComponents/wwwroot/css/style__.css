@@ -25,13 +25,30 @@
     margin-bottom: .5em;
 }
 
-button{
-    color:black;
-    background-color: green;
+.color-component-w {
+    color: white
+}
+
+.color-component-y {
+    color: yellow
+}
+
+.color-component-r {
+    color: red
+}
+
+.color-component-g {
+    color: green
+}
+
+button {
+    color: black;
+    background-color: red;
     border-style: solid;
     border-radius: .25em;
+    margin-left: 1.25em;
 }
 
 .on{
-    background-color: red;
+    background-color: green;
 }
