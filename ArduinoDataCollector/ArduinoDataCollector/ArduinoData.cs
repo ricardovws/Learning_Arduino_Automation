@@ -41,12 +41,12 @@ namespace ArduinoDataCollector
             {
                 serialPort.Open();
 
-                int id = 762;
+                int id = 264;
 
                 while (true)
                 {
                     //Here he takes the data that comes from Arduino serial port
-                    //string[] data = new string[] { serialPort.ReadLine() };
+                   
                     string[] _data_ = new string[] { serialPort.ReadLine() };
 
                     //*//*//
@@ -81,7 +81,7 @@ namespace ArduinoDataCollector
                     MySqlConnection connection;
                     string connectionString = "server=localhost;uid=root;pwd=1234567;database=lordoflittlecomponentsappdb";
 
-                    //int status_ = 1;
+                    
 
                     try
                     {
@@ -97,7 +97,7 @@ namespace ArduinoDataCollector
 
                             while (reader.Read())
                             {
-                                //int id_ = (int)reader["Id"];
+                                
                                 int status_ = (int)reader["Status"];
 
                                 Console.WriteLine("--------" + status_);
@@ -111,22 +111,17 @@ namespace ArduinoDataCollector
 
                     catch (Exception e)
                     {
-                        Console.WriteLine("Deu erro! - " + e.Message);
+                        Console.WriteLine("Oupsi! We have an error here! - " + e.Message);
                     }
 
-                    //var lixo = Console.ReadLine();
-                    //serialPort.Write(lixo);
-
-
-                    //serialPort.Write(status_.ToString());
-
+                 
                     //******//
 
                     //Here it generates a .txt file
                     string fileName = "arduinoData";
                     string fileExtension = "txt";
-                    File.AppendAllLines(@"C:\Users\Ricardo\OneDrive\Documentos\Learning_Arduino_Automation\ArduinoDataCollector\"
-                    + fileName + "." + fileExtension, _data_);
+                    string filePath = @"C:\Users\Ricardo\OneDrive\Documentos\Learning_Arduino_Automation\ArduinoDataCollector\";
+                    File.AppendAllLines(filePath + fileName + "." + fileExtension, _data_);
                     //************************************//
 
                 }

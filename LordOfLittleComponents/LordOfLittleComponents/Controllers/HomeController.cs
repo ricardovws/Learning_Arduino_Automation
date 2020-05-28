@@ -47,9 +47,20 @@ namespace LordOfLittleComponents.Controllers
         {
             var data = _context.TemperatureAndHumidity.LastOrDefault();
             EnvironmentDataViewModel viewModel = new EnvironmentDataViewModel();
-            viewModel.Id = data.Id;
-            viewModel.Temperature = data.Temperature;
-            viewModel.Humidity = data.Humidity;
+
+            try
+            {
+                viewModel.Id = data.Id;
+                viewModel.Temperature = data.Temperature + " °C";
+                viewModel.Humidity = data.Humidity + " %";
+            }
+
+            catch (NullReferenceException)
+            {
+                viewModel.Id = 0;
+                viewModel.Temperature = "Unfortunately, no data was found in database.";
+                viewModel.Humidity = "Unfortunately, no data was found in database.";
+            }
 
             return viewModel;
         }
