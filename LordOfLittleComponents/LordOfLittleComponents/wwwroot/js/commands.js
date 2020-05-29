@@ -1,4 +1,13 @@
 ﻿
+function refreshButtonStatus() {
+
+    if ($("#btn_w").text() == "Off") {
+        $(this).addClass("on");
+    }
+}
+
+
+
 $("#btn_w").click(function () {
     var ID = 1;
     if ($(this).hasClass("on")) {
@@ -74,3 +83,5 @@ $("#btn_g").click(function () {
         );
     }
 });
+
+

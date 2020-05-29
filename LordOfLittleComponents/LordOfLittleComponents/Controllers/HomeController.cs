@@ -20,11 +20,6 @@ namespace LordOfLittleComponents.Controllers
             _serialPortConnector = new SerialPortConnector();
         }
 
-        //public HomeController()
-        //{
-        //    _serialPortConnector = new SerialPortConnector();
-        //}
-
         public IActionResult Index()
         {
             var data = ShowTemperatureAndHumidityData();
@@ -69,28 +64,8 @@ namespace LordOfLittleComponents.Controllers
         {
             var data = ShowTemperatureAndHumidityData();
 
-            //var data = _context.TemperatureAndHumidity.FirstOrDefault();
-            //EnvironmentDataViewModel viewModel = new EnvironmentDataViewModel();
-            //viewModel.Id = data.Id;
-            //viewModel.Temperature = data.Temperature;
-            //viewModel.Humidity = data.Humidity;
-
             return PartialView("_SensorData", data);
         }
-
-        //public void On_Command(int id)
-        //{
-        //    var component = _context.Commands.First(x => x.Id == id);
-        //    component.Status = component.On;
-        //    SendCommand(component);
-        //}
-
-        //public void Off_Command(int id)
-        //{
-        //    var component = _context.Commands.First(x => x.Id == id);
-        //    component.Status = component.On;
-        //    SendCommand(component);
-        //}
 
         public string SendCommand(int id, string command)
         {
@@ -112,24 +87,6 @@ namespace LordOfLittleComponents.Controllers
 
             return command;
         }
-
-
-        public IActionResult Send_turnOn()
-        {
-            var command = 1;
-            _serialPortConnector.Send(command.ToString());
-            return RedirectToAction(nameof(Index));
-        }
-
-
-        public IActionResult Send_turnOff()
-        {
-            var command = 0;
-            _serialPortConnector.Send(command.ToString());
-            return RedirectToAction(nameof(Index));
-        }
-
-     
 
         public IActionResult About()
         {
