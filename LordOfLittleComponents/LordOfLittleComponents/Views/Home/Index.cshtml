@@ -5,53 +5,50 @@
 }
 
 
-<h1>Vamo vê aí qual que eras desse Arduino então</h1>
+<h2>Sensor</h2>
 <hr />
 
 
 <div class="environment_conditions_container">
 
     <div class="environment_conditions">
-        <p>Id:</p>
-        <p>Temperatura:</p>
-        <p>Umidade relativa do ar:</p>
-        <p>Umidade relativa do solo:</p>
+        @*<p>Id:</p>*@
+        <p>Temperature:</p>
+        <p>Relative humidity:</p>
     </div>
-
     @await Html.PartialAsync("_SensorData", Model)
-
-   
     <p></p>
 
 </div>
-<hr />
-<div class="_container">
 
-    
+<h2>LEDs</h2>
+<hr />
+
+
+<div class="_container">
     <div class="buttons_commands">
 
         <div class="commandButton">
-            <p class="color-component-w">LED Branco</p>
+            <p class="color-component-w">White LED</p>
             Status:<button id="btn_w">@Html.DisplayFor(model => model.Status1)</button>
         </div>
 
         <div class="commandButton">
-            <p class="color-component-y">LED Amarelo</p>
+            <p class="color-component-y">Yellow LED</p>
             Status:<button id="btn_y">@Html.DisplayFor(model => model.Status2)</button>
         </div>
 
         <div class="commandButton">
-            <p class="color-component-r">LED Vermelho</p>
+            <p class="color-component-r">Red LED</p>
             Status:<button id="btn_r">@Html.DisplayFor(model => model.Status3)</button>
         </div>
 
         <div class="commandButton">
-            <p class="color-component-g">LED Verde</p>
+            <p class="color-component-g">Green LED</p>
             Status:<button id="btn_g">@Html.DisplayFor(model => model.Status4)</button>
         </div>
 
     </div>
-    
 </div>
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
